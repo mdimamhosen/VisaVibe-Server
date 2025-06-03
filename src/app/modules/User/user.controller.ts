@@ -7,7 +7,6 @@ import { IImageFile } from '../../interface/IImageFile';
 import { UserServices } from './user.service';
 
 const registerUser = catchAsync(async (req, res) => {
-  console.log('Req Body', req.body);
   const result = await UserServices.registerUser(req.body);
 
   //   const { refreshToken, accessToken } = result;

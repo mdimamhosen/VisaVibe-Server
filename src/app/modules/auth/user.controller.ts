@@ -25,10 +25,54 @@ const loginUser = catchAsync(async (req, res) => {
     },
   });
 });
-const refreshToken = catchAsync(async (req, res) => {});
-const changePassword = catchAsync(async (req, res) => {});
-const verifyOTP = catchAsync(async (req, res) => {});
-const resetPassword = catchAsync(async (req, res) => {});
+const refreshToken = catchAsync(async (req, res) => {
+  const { authorization } = req.headers;
+
+  const result = await AuthService.refreshToken(authorization as string);
+
+  sendResponse(res, {
+    statusCode: 200,
+    success: true,
+    message: 'User logged in successfully!',
+    data: result,
+  });
+});
+const changePassword = catchAsync(async (req, res) => {
+  const user = req.user;
+  const payload = req.body;
+
+  await AuthService.changePassword(user, payload);
+
+  sendResponse(res, {
+    statusCode: StatusCodes.OK,
+    success: true,
+    message: 'Password changed successfully!',
+    data: null,
+  });
+});
+const verifyOTP = catchAsync(async (req, res) => {
+  const result = await AuthService.verifyOTP(req.body);
+
+  sendResponse(res, {
+    statusCode: StatusCodes.OK,
+    success: true,
+    message: 'OTP verified successfully.',
+    data: result,
+  });
+});
+
+const resetPassword = catchAsync(async (req, res) => {
+  const payload = req.body;
+
+  const result = await AuthService.resetPassword(payload);
+
+  sendResponse(res, {
+    statusCode: StatusCodes.OK,
+    success: true,
+    message: 'Password reset successfully!',
+    data: result,
+  });
+});
 
 export const AuthController = {
   loginUser,
