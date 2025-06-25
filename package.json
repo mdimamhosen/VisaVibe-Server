@@ -10,7 +10,7 @@
     "lint:fix": "npx eslint src --fix",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
     "dev": "ts-node-dev --respawn --transpile-only ./src/server.ts",
-    "start": "node ./dist/server.js"
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",
