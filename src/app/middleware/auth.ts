@@ -2,12 +2,12 @@ import { NextFunction, Request, Response } from 'express';
 import jwt, { JwtPayload, TokenExpiredError } from 'jsonwebtoken';
 import config from '../config';
 
-import AppError from '../errors/appError';
 import catchAsync from '../utils/catchAsync';
 import { StatusCodes } from 'http-status-codes';
 
 import { UserRole } from '../types/user.types';
 import User from '../modules/User/user.model';
+import { AppError } from '../utils/AppError';
 
 const auth = (...requiredRoles: UserRole[]) => {
   return catchAsync(async (req: Request, res: Response, next: NextFunction) => {

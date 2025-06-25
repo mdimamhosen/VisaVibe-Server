@@ -2,11 +2,12 @@ import mongoose, { ClientSession } from 'mongoose';
 import bcrypt from 'bcrypt';
 import { IAuth, IJwtPayload } from './auth.interface';
 import User from '../User/user.model';
-import AppError from '../../errors/appError';
+
 import { StatusCodes } from 'http-status-codes';
 import config from '../../config';
 import { createToken, verifyToken } from './auth.utils';
 import { JwtPayload, Secret } from 'jsonwebtoken';
+import { AppError } from '../../utils/AppError';
 
 const loginUser = async (payload: IAuth) => {
   const session = await mongoose.startSession();

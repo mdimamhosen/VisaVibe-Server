@@ -2,9 +2,10 @@ import mongoose, { Schema } from 'mongoose';
 import { IUser, UserModel } from './user.interface';
 import bcrypt from 'bcrypt';
 import config from '../../config';
-import AppError from '../../errors/appError';
+
 import { StatusCodes } from 'http-status-codes';
 import { UserRole } from '../User/user.interface';
+import { AppError } from '../../utils/AppError';
 
 // Create the User schema based on the interface
 const userSchema = new Schema<IUser, UserModel>(

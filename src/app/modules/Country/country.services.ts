@@ -1,5 +1,5 @@
-import AppError from '../../errors/appError';
 import { IImageFile } from '../../interface/IImageFile';
+import { AppError } from '../../utils/AppError';
 import { ICountry } from './country.interface';
 import Country from './country.model';
 

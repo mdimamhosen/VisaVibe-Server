@@ -1,8 +1,8 @@
 import { StatusCodes } from 'http-status-codes';
 import { IImageFile } from '../../interface/IImageFile';
 import { IBlog } from './blog.interface';
-import AppError from '../../errors/appError';
 import { Blog } from './blog.model';
+import { AppError } from '../../utils/AppError';
 
 const createBlog = async (payload: IBlog, file: IImageFile) => {
   const isBlogExists = await Blog.findOne({

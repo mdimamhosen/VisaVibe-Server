@@ -2,7 +2,7 @@ import { StatusCodes } from 'http-status-codes';
 
 import catchAsync from '../utils/catchAsync';
 import { NextFunction, Request, Response } from 'express';
-import AppError from '../errors/appError';
+import { AppError } from '../utils/AppError';
 
 export const parseBody = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
   if (!req.body.data) {
