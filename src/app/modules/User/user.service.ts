@@ -1,11 +1,12 @@
 import mongoose from 'mongoose';
 import { IUser } from './user.interface';
-import { UserRole } from '../../types/user.types';
+
 import AppError from '../../errors/appError';
 import { StatusCodes } from 'http-status-codes';
 import User from './user.model';
 import { IJwtPayload } from '../auth/auth.interface';
 import { IImageFile } from '../../interface/IImageFile';
+import { UserRole } from '../User/user.interface';
 
 // Function to register user
 const registerUser = async (userData: IUser) => {

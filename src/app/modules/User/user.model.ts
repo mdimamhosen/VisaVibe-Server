@@ -4,7 +4,7 @@ import bcrypt from 'bcrypt';
 import config from '../../config';
 import AppError from '../../errors/appError';
 import { StatusCodes } from 'http-status-codes';
-import { UserRole } from '../../types/user.types';
+import { UserRole } from '../User/user.interface';
 
 // Create the User schema based on the interface
 const userSchema = new Schema<IUser, UserModel>(

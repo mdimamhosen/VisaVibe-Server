@@ -5,7 +5,8 @@ import validateRequest from '../../middleware/validateRequest';
 import auth from '../../middleware/auth';
 import { multerUpload } from '../../config/multer.config';
 import { parseBody } from '../../middleware/bodyParser';
-import { UserRole } from '../../types/user.types';
+import { UserRole } from '../User/user.interface';
+
 import { UserValidation } from './user.validation';
 import { UserController } from './user.controller';
 

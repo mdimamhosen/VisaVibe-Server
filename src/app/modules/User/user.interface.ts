@@ -1,6 +1,6 @@
 import { Document, Model } from 'mongoose';
 import { UserRole } from '../../types/user.types';
-
+export { UserRole };
 export interface IUser extends Document {
   email: string;
   password: string;
