@@ -13,7 +13,7 @@ import notFound from './app/middleware/notFound';
 const app: Application = express();
 
 // Middleware setup
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({ origin: ['http://localhost:3001', 'http://localhost:3000'] }));
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

@@ -5,5 +5,5 @@ export interface ICountry {
   name: string;
   flagUrl?: string;
   continent?: string;
-  universities?: IUniversity[]; // List of universities in the country
+  universities?: IUniversity[];
 }

@@ -37,4 +37,8 @@ export default {
     failed_url: process.env.FAILED_URL,
     cancel_url: process.env.CANCEL_URL,
   },
+  email_sender: {
+    email: process.env.EMAIL_SENDER_EMAIL,
+    password: process.env.EMAIL_SENDER_PASSWORD,
+  },
 };

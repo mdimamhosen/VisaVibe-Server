@@ -7,6 +7,15 @@ const createCountry = z.object({
   }),
 });
 
+const updateCountry = z.object({
+  body: z.object({
+    name: z.string().min(1, 'Country name is required').optional(),
+    flagUrl: z.string().url('Invalid URL format for flag').optional(),
+    continent: z.string().min(1, 'Continent is required').optional(),
+  }),
+});
+
 export const CountryValidations = {
   createCountryValidation: createCountry,
+  updateCountryValidation: updateCountry,
 };

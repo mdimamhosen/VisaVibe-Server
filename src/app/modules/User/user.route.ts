@@ -22,7 +22,7 @@ router.post(
 router.patch(
   '/update-profile',
   auth(UserRole.ADMIN),
-  multerUpload.single('profilePhoto'),
+  multerUpload.single('profilePicture'),
   parseBody,
   validateRequest(UserValidation.updateProfileValidationSchema),
   UserController.updateProfile

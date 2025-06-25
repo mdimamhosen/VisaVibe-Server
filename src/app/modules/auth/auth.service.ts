@@ -48,6 +48,12 @@ const loginUser = async (payload: IAuth) => {
     );
 
     await session.commitTransaction();
+    console.log('User logged in successfully:', user.email);
+    // Set the refresh token in the user's document
+    console.log({
+      refreshToken,
+      accessToken,
+    });
 
     return {
       accessToken,
