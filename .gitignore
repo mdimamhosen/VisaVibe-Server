@@ -3,4 +3,4 @@ node_modules
 dist
 out
 public
-.env
+config.bat
